@@ -5,7 +5,7 @@
 #echo -en "\e[y;xftext"
 
 mot_a_deviner=$(./trouver_un_mot_aléatoire.sh)
-mot_a_deviner="pomme"
+#mot_a_deviner="pomme"
 
 essais=()
 
@@ -14,10 +14,12 @@ echo $mot_a_deviner
 draw()
 {
 	echo -en "\e[20;20fBienvenue dans le jeu du Motus"
+	echo -en "\e[21;20fLe mot contient ${#mot_a_deviner}"
+
+	echo -en "\e[21;50fVous avez fait ${#essais[@]}"
 
 	for i in $(seq 0 $((${#essais[@]}-1)))
 	do
-		echo "${essais[$i]}"
 		local y=$((25+$i))
 		echo -en "\e[$y;20f"
 		./affichageCouleur.sh "${essais[$i]}" $mot_a_deviner
@@ -31,11 +33,24 @@ do
 
 	y=$((${#essais[@]}+25))
 	echo -en "\e[$y;20f"
-	read -n ${#mot_a_deviner} entry
+	read ${#mot_a_deviner} entry
 	if [ $(./verify_entry.sh $entry ${#mot_a_deviner}) = "0" ]
 	then
 		continue
 	fi
 
+	if [ $entry = $mot_a_deviner ]
+	then
+		victoire=1
+		break
+	fi
+
 	essais+=($entry)
 done
+
+if [ victoire -eq 1 ]
+then
+	y=$((${#essais[@]}+35))
+	echo -en "\e[$y;20fVous avez gagné bravo !"
+fi
+
