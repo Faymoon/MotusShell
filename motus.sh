@@ -4,7 +4,7 @@
 
 #echo -en "\e[y;xftext"
 
-mot_a_deviner=$(./trouver_un_mot_aléatoire.sh)
+mot_a_deviner=$(./trouver_un_mot_aléatoire.sh $1)
 #mot_a_deviner="pomme"
 
 essais=()

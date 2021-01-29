@@ -1,5 +1,7 @@
 time=120
-difficulte=1
+difficulte=$((RANDOM%12))
+echo $difficulte
+sleep 1
 option=null
 
 printmenu(){
@@ -20,7 +22,7 @@ printmenu(){
         printParam
         ;;
     'j')
-        ./motus.sh difficulte
+        ./motus.sh $difficulte
         ;;
     's')
         exit 0
