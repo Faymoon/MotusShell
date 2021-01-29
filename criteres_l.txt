@@ -1,0 +1,6 @@
+
+
+ - mots d'une longueur minimale de 5 (6?)
+ - conjuguaison de verbes non acceptée sauf infinitif.
+ - pas de noms propres
+
