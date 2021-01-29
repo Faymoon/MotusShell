@@ -10,13 +10,14 @@ mot_a_deviner=$(./trouver_un_mot_aléatoire.sh)
 essais=()
 
 echo $mot_a_deviner
+sleep 1
 
 draw()
 {
 	echo -en "\e[20;20fBienvenue dans le jeu du Motus"
 	echo -en "\e[21;20fLe mot contient ${#mot_a_deviner}"
 
-	echo -en "\e[21;50fVous avez fait ${#essais[@]}"
+	echo -en "\e[21;50fVous avez fait ${#essais[@]} essais"
 
 	for i in $(seq 0 $((${#essais[@]}-1)))
 	do
@@ -50,7 +51,6 @@ done
 
 if [ $victoire -eq 1 ]
 then
-	y=$((${#essais[@]}+35))
-	echo -en "\e[$y;20fVous avez gagné bravo !"
+	y=$((${#essais[@]}+25))
+	echo -e "\e[$y;20fVous avez gagné bravo !"
 fi
-
