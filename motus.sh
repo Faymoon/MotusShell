@@ -48,7 +48,7 @@ do
 	essais+=($entry)
 done
 
-if [ victoire -eq 1 ]
+if [ $victoire -eq 1 ]
 then
 	y=$((${#essais[@]}+35))
 	echo -en "\e[$y;20fVous avez gagné bravo !"
