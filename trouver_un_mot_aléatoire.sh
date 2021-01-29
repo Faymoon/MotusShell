@@ -1,17 +1,7 @@
 #!/bin/bash
 
-
-
-i=$(wc -l ./list |cut -d " " -f 1 )
+i=$(wc -l ./dico |cut -d " " -f 1 )
 
 a=$((1 + RANDOM % $i))
 
-head -n $a ./list | tail -n 1
-
-
-
-
-
-
-
-
+head -n $a ./dico | tail -n 1

@@ -35,4 +35,4 @@ md=$2
 
 }
 
-affichageCouleur holaa hello
+affichageCouleur $1 $2

@@ -9,7 +9,7 @@ then
 fi
 
 #TODO : Changer le chemin vers le dictionnaire
-if [ $(grep -c "^$1$" /usr/share/dict/french) = "1" ] && [ ${#1} -eq $2 ]
+if [ $(grep -c "^$1$" ./dico) = "1" ] && [ ${#1} -eq $2 ]
 then
 	echo "1"
 else
