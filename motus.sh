@@ -27,7 +27,7 @@ draw()
 	done
 }
 
-while [ 1 -eq 1 ]
+while [ ${#essais[@]} -le $1 ]
 do
 	clear
 	draw
@@ -53,4 +53,9 @@ if [ $victoire -eq 1 ]
 then
 	y=$((${#essais[@]}+25))
 	echo -e "\e[$y;20fVous avez gagné bravo !"
+else
+	y=$((${#essais[@]}+25))
+        echo -e "\e[$y;20fVous avez perdu dommage !"
 fi
+
+./main.sh
