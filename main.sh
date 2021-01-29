@@ -20,8 +20,7 @@ printmenu(){
         printParam
         ;;
     'j')
-        #./motus.sh time difficulte
-        ./motus.sh
+        ./motus.sh difficulte
         ;;
     's')
         exit 0
@@ -35,7 +34,7 @@ printParam(){
   echo -en "\e[10;25fParametres MOTUS"
   echo -en "\e[11;10f-------------------------------------------------$(tput sgr0)\n"
   echo -en "\e[13;10fChoisissez une option parmi les suivantes:"
-  echo -en "\e[15;10fDifficulte(j)"
+  echo -en "\e[15;10fLongeur du mot(j)"
   echo -en "\e[16;10fTime(t)"
   echo -en "\e[17;10fMeunu principal(s)"
   echo -en "\e[18;10f"
@@ -43,7 +42,7 @@ printParam(){
   read param
   case $param in
     'j')
-      echo -ne "Difficulte 1-3: "
+	    echo -ne "Longeur (2-12): "
       read difficulte
       printParam
     ;;
