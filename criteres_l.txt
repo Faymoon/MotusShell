@@ -1,0 +1,6 @@
+
+
+ - Mots d'une longueur minimale de 5 lettres 
+ - Infinitif des verbes accepté mais pas les autres conjugaisons 
+ - Noms propres non acceptés
+
