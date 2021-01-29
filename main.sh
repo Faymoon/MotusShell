@@ -14,6 +14,19 @@ printmenu(){
   echo -en "\e[17;10fSortir(s)"
   echo -en "\e[18;10f"
   read option
+
+  case $option in
+    'p')
+        printParam
+        ;;
+    'j')
+        #./motus.sh time difficulte
+        ./motus.sh
+        ;;
+    's')
+        exit 0
+        ;;
+      esac
 }
 
 printParam(){
@@ -47,16 +60,3 @@ printParam(){
 
 
 printmenu
-
-case $option in
-  'p')
-      printParam
-      ;;
-  'j')
-      #./motus.sh time difficulte
-      ./motus.sh
-      ;;
-  's')
-      exit 0
-      ;;
-    esac
