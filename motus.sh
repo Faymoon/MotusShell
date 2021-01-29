@@ -55,7 +55,9 @@ then
 	echo -e "\e[$y;20fVous avez gagné bravo !"
 else
 	y=$((${#essais[@]}+25))
-        echo -e "\e[$y;20fVous avez perdu dommage !"
+        echo -e "\e[$y;20fVous avez perdu dommage ! le mot était $mot_a_deviner"
 fi
+
+espeak -v fr $mot_a_deviner
 
 ./main.sh
