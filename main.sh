@@ -1,7 +1,6 @@
 time=120
-difficulte=$((RANDOM%12))
-echo $difficulte
-sleep 1
+difficulte=$((5+RANDOM%7))
+essai=6
 option=null
 
 printmenu(){
@@ -22,7 +21,7 @@ printmenu(){
         printParam
         ;;
     'j')
-        ./motus.sh $difficulte
+        ./motus.sh $difficulte $essai
         ;;
     's')
         exit 0
@@ -44,13 +43,13 @@ printParam(){
   read param
   case $param in
     'j')
-	    echo -ne "Longeur (2-12): "
+	    echo -ne "Longeur (5-12): "
       read difficulte
       printParam
     ;;
     't')
-    echo -ne "Time en sec: "
-    read time
+    echo -ne "Nombre d'essai : "
+    read essai
     printParam
     ;;
     's')

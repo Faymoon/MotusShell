@@ -15,7 +15,7 @@ sleep 1
 draw()
 {
 	echo -en "\e[20;20fBienvenue dans le jeu du Motus"
-	echo -en "\e[21;20fLe mot contient ${#mot_a_deviner}"
+	echo -en "\e[21;20fLe mot contient ${#mot_a_deviner} lettres"
 
 	echo -en "\e[21;50fVous avez fait ${#essais[@]} essais"
 
@@ -27,7 +27,7 @@ draw()
 	done
 }
 
-while [ ${#essais[@]} -le $1 ]
+while [ ${#essais[@]} -le $2 ]
 do
 	clear
 	draw
