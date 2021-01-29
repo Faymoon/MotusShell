@@ -33,7 +33,7 @@ do
 
 	y=$((${#essais[@]}+25))
 	echo -en "\e[$y;20f"
-	read ${#mot_a_deviner} entry
+	read entry
 	if [ $(./verify_entry.sh $entry ${#mot_a_deviner}) = "0" ]
 	then
 		continue
